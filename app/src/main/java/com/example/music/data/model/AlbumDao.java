@@ -1,6 +1,5 @@
-package com.example.music.models;
+package com.example.music.data.model;
 
-import androidx.annotation.RequiresPermission;
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;

@@ -1,4 +1,4 @@
-package com.example.music.viewmodels;
+package com.example.music.ui.main.viewmodel;
 
 import android.app.Application;
 
@@ -6,16 +6,16 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.music.models.Album;
-import com.example.music.repositories.AlbumRepository;
+import com.example.music.data.model.Album;
+import com.example.music.data.repository.AlbumRepository;
 
 import java.util.List;
 
-public class AlbumViewModel extends AndroidViewModel {
+public class MainViewModel extends AndroidViewModel {
     private AlbumRepository repository;
     private LiveData<List<Album>> allAlbums;
 
-    public AlbumViewModel(@NonNull Application application) {
+    public MainViewModel(@NonNull Application application) {
         super(application);
         repository = new AlbumRepository(application);
         allAlbums = repository.getAllAlbums();

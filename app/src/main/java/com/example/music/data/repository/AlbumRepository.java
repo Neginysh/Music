@@ -1,13 +1,13 @@
-package com.example.music.repositories;
+package com.example.music.data.repository;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.music.models.Album;
-import com.example.music.models.AlbumDao;
-import com.example.music.models.AlbumsDatabase;
+import com.example.music.data.model.Album;
+import com.example.music.data.model.AlbumDao;
+import com.example.music.data.model.AlbumsDatabase;
 
 import java.util.List;
 

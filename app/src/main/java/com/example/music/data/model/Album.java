@@ -1,8 +1,7 @@
-package com.example.music.models;
+package com.example.music.data.model;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 
 import java.util.ArrayList;
