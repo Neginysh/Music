@@ -10,8 +10,6 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.music.data.model.topalbums.Album;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 

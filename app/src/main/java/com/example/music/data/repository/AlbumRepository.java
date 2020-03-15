@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 import com.example.music.data.model.AlbumDao;
 import com.example.music.data.model.AlbumModel;
 import com.example.music.data.model.AlbumsDatabase;
+import com.example.music.data.model.topalbums.Artist;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class AlbumRepository {
 
     private AlbumDao albumDao;
     private LiveData<List<AlbumModel>> allAlbums;
+
 
     public AlbumRepository(Application application) {
         AlbumsDatabase albumsDatabase = AlbumsDatabase.getInstance(application);
@@ -40,6 +42,8 @@ public class AlbumRepository {
     public LiveData<List<AlbumModel>> getAllAlbums() {
         return allAlbums;
     }
+
+
 
     private static class InsertToAlbumAsynTast extends AsyncTask<AlbumModel, Void, Void> {
         AlbumDao albumDao;
@@ -82,6 +86,7 @@ public class AlbumRepository {
             return null;
         }
     }
+
 
 
 
