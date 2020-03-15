@@ -4,11 +4,12 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity(tableName = "album_table")
-public class Album {
+public class AlbumModel {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -19,7 +20,7 @@ public class Album {
     @TypeConverters(Converters.class)
     private List<String> trackNames = new ArrayList<>();
 
-    public Album(String name, String artist, String imgUrl, List<String> trackNames) {
+    public AlbumModel(String name, String artist, String imgUrl, List<String> trackNames) {
         this.name = name;
         this.artist = artist;
         this.imgUrl = imgUrl;

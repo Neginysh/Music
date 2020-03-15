@@ -5,8 +5,8 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.music.data.model.Album;
 import com.example.music.data.model.AlbumDao;
+import com.example.music.data.model.AlbumModel;
 import com.example.music.data.model.AlbumsDatabase;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 public class AlbumRepository {
 
     private AlbumDao albumDao;
-    private LiveData<List<Album>> allAlbums;
+    private LiveData<List<AlbumModel>> allAlbums;
 
     public AlbumRepository(Application application) {
         AlbumsDatabase albumsDatabase = AlbumsDatabase.getInstance(application);
@@ -22,26 +22,26 @@ public class AlbumRepository {
         allAlbums = albumDao.getAlbums();
     }
 
-    public void insert(Album album) {
+    public void insert(AlbumModel album) {
         new InsertToAlbumAsynTast(albumDao).execute(album);
 
     }
 
-    public void delete(Album album) {
+    public void delete(AlbumModel album) {
         new DeleteAlbumAsynTast(albumDao).execute(album);
 
     }
 
-    public void update(Album album) {
+    public void update(AlbumModel album) {
         new UpdateAlbumAsynTast(albumDao).execute(album);
 
     }
 
-    public LiveData<List<Album>> getAllAlbums() {
+    public LiveData<List<AlbumModel>> getAllAlbums() {
         return allAlbums;
     }
 
-    private static class InsertToAlbumAsynTast extends AsyncTask<Album, Void, Void> {
+    private static class InsertToAlbumAsynTast extends AsyncTask<AlbumModel, Void, Void> {
         AlbumDao albumDao;
 
         public InsertToAlbumAsynTast(AlbumDao albumDao) {
@@ -49,13 +49,13 @@ public class AlbumRepository {
         }
 
         @Override
-        protected Void doInBackground(Album... albums) {
+        protected Void doInBackground(AlbumModel... albums) {
             albumDao.insert(albums[0]);
             return null;
         }
     }
 
-    private static class DeleteAlbumAsynTast extends AsyncTask<Album, Void, Void> {
+    private static class DeleteAlbumAsynTast extends AsyncTask<AlbumModel, Void, Void> {
         AlbumDao albumDao;
 
         public DeleteAlbumAsynTast(AlbumDao albumDao) {
@@ -63,13 +63,13 @@ public class AlbumRepository {
         }
 
         @Override
-        protected Void doInBackground(Album... albums) {
+        protected Void doInBackground(AlbumModel... albums) {
             albumDao.delete(albums[0]);
             return null;
         }
     }
 
-    private static class UpdateAlbumAsynTast extends AsyncTask<Album, Void, Void> {
+    private static class UpdateAlbumAsynTast extends AsyncTask<AlbumModel, Void, Void> {
         AlbumDao albumDao;
 
         public UpdateAlbumAsynTast(AlbumDao albumDao) {
@@ -77,9 +77,12 @@ public class AlbumRepository {
         }
 
         @Override
-        protected Void doInBackground(Album... albums) {
+        protected Void doInBackground(AlbumModel... albums) {
             albumDao.update(albums[0]);
             return null;
         }
     }
+
+
+
 }

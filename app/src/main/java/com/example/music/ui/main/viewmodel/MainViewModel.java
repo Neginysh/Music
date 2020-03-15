@@ -6,14 +6,14 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.music.data.model.Album;
+import com.example.music.data.model.AlbumModel;
 import com.example.music.data.repository.AlbumRepository;
 
 import java.util.List;
 
 public class MainViewModel extends AndroidViewModel {
     private AlbumRepository repository;
-    private LiveData<List<Album>> allAlbums;
+    private LiveData<List<AlbumModel>> allAlbums;
 
     public MainViewModel(@NonNull Application application) {
         super(application);
@@ -21,17 +21,17 @@ public class MainViewModel extends AndroidViewModel {
         allAlbums = repository.getAllAlbums();
     }
 
-    public void deleteAlbum(Album album){
+    public void deleteAlbum(AlbumModel album){
         repository.delete(album);
     }
-    public void insertAlbum(Album album){
+    public void insertAlbum(AlbumModel album){
         repository.delete(album);
     }
-    public void updateAlbum(Album album){
+    public void updateAlbum(AlbumModel album){
         repository.delete(album);
     }
 
-    public LiveData<List<Album>> getAllAlbums(){
+    public LiveData<List<AlbumModel>> getAllAlbums(){
         return allAlbums;
     }
 }

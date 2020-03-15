@@ -10,11 +10,13 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.music.data.model.topalbums.Album;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 
-@Database(entities = {Album.class}, version = 1)
+@Database(entities = {AlbumModel.class}, version = 1)
 @TypeConverters({Converters.class})
 public abstract class AlbumsDatabase extends RoomDatabase {
 
@@ -50,9 +52,9 @@ public abstract class AlbumsDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            albumDao.insert(new Album("album1", "artist1", "image",
+            albumDao.insert(new AlbumModel("album1", "artist1", "image",
                     new ArrayList<String>(Arrays.asList("track1", "track2","track3"))));
-            albumDao.insert(new Album("album2", "artist2", "image",
+            albumDao.insert(new AlbumModel("album2", "artist2", "image",
                     new ArrayList<String>(Arrays.asList("track1", "track2","track3"))));
             return null;
         }

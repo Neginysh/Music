@@ -8,23 +8,25 @@ import androidx.room.Query;
 import androidx.room.TypeConverters;
 import androidx.room.Update;
 
+import com.example.music.data.model.topalbums.Album;
+
 import java.util.List;
 
 @Dao
 public interface AlbumDao {
 
     @Insert
-    void insert(Album album);
+    void insert(AlbumModel album);
 
     @Update
-    void update(Album album);
+    void update(AlbumModel album);
 
     @Delete
-    void delete(Album album);
+    void delete(AlbumModel album);
 
     @TypeConverters({Converters.class})
     @Query("SELECT * FROM album_table")
-    LiveData<List<Album>> getAlbums(); //livedata to observe changes
+    LiveData<List<AlbumModel>> getAlbums(); //livedata to observe changes
 
 
 }
