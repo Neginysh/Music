@@ -15,9 +15,12 @@ public class SearchArtisViewModel extends ViewModel {
     private ArtistsRepository repository;
     private LiveData<List<Artist>> allArtists;
 
-    public SearchArtisViewModel() {
+    public void init(String artistName, String apiKey, String format) {
+        if (allArtists != null){
+            return;
+        }
         repository = new ArtistsRepository();
-        allArtists = repository.getAllArtists();
+        allArtists = repository.getAllArtists(artistName, apiKey, format);
     }
 
     public LiveData<List<Artist>> getAllArtists(){

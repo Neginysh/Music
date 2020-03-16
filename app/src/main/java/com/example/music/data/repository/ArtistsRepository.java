@@ -33,9 +33,10 @@ public class ArtistsRepository {
 
     }
 
-    public LiveData<List<Artist>> getAllArtists() {
 
-        Call<List<Artist>> calls = api.getArtists();
+    public LiveData<List<Artist>> getAllArtists(String artistName, String apiKey, String format) {
+
+        Call<List<Artist>> calls = api.getArtists(artistName, apiKey, format);
         final MutableLiveData<List<Artist>> allArtists = new MutableLiveData<>();
 
         calls.enqueue(new Callback<List<Artist>>() {

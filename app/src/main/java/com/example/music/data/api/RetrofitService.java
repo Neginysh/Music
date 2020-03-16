@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitService {
 
     private static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=cher&api_key=7da8db4082844f11d8d41b516c75ffa3&format=json")
+            .baseUrl("http://ws.audioscrobbler.com/2.0/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
