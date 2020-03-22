@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import com.example.music.R;
-import com.example.music.data.model.topalbums.Artist;
+import com.example.music.data.model.artistsearch.Artist;
 import com.example.music.ui.search.adapter.ArtistsRecyclerAdapter;
 import com.example.music.ui.search.viewmodel.SearchArtisViewModel;
 
@@ -29,7 +29,7 @@ public class SearchArtistActivity extends AppCompatActivity implements ArtistsRe
     private EditText et_artist;
     private Button search;
     String artistname = "Cher";
-    private List<Artist> artistList= new ArrayList<>();
+    private List<Artist> artistList;
 
 
     @Override
@@ -45,6 +45,7 @@ public class SearchArtistActivity extends AppCompatActivity implements ArtistsRe
     }
 
     private void initViewModel() {
+        artistList= new ArrayList<>();
         artisViewModel = ViewModelProviders.of(this).get(SearchArtisViewModel.class);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +73,7 @@ public class SearchArtistActivity extends AppCompatActivity implements ArtistsRe
         recyclerView = findViewById(R.id.recycler_view_artists);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new ArtistsRecyclerAdapter(this, artisViewModel.getAllArtists().getValue());
+        adapter = new ArtistsRecyclerAdapter(this, artistList);
         recyclerView.setAdapter(adapter);
         adapter.setClickListener(this);
     }

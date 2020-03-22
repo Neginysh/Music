@@ -10,8 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.music.R;
-import com.example.music.data.model.topalbums.Artist;
+import com.example.music.data.model.artistsearch.Artist;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<ArtistsRecyclerAdapter.BaseViewHolder> {
@@ -22,15 +23,14 @@ public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<ArtistsRecycler
 
     public ArtistsRecyclerAdapter(Context context, List<Artist> artistList) {
         this.context = context;
-        this.artistList = artistList;
+        this.artistList = new ArrayList<>(artistList);
     }
 
     @NonNull
     @Override
     public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view =  LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_list_item, parent, false);
-        BaseViewHolder vh = new BaseViewHolder(view) {
-        };
+        BaseViewHolder vh = new BaseViewHolder(view);
         return vh;
     }
 
@@ -51,7 +51,7 @@ public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<ArtistsRecycler
 
 
 
-    public abstract class BaseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class BaseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView tv_artist;
 
