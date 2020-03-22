@@ -18,7 +18,7 @@ public interface LastfmApi {
 
  //   http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=cher&api_key=YOUR_API_KEY&format=json
     @GET("?method=artist.search&format=json")
-    Observable<Response<ArtistSearch>> getArtists(@Query("artist") String artistName,
+    Call<ArtistSearch> getArtists(@Query("artist") String artistName,
                                                  @Query("api_key") String apiKey);
 
    // ?method=album.getinfo&api_key=YOUR_API_KEY&artist=Cher&album=Believe&format=json
