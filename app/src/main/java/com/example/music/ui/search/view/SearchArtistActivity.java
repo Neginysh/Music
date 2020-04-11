@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 
 import com.example.music.R;
 import com.example.music.ui.search.adapter.ArtistsRecyclerAdapter;
@@ -22,17 +23,12 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
     private ArtistsRecyclerAdapter adapter;
     private ProgressBar progressBar;
     private SearchArtisViewModel artisViewModel;
-    private EditText et_artist;
-    private Button search;
-    String artistname = "Cher";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_artist);
-        et_artist = findViewById(R.id.et_artist);
-        search = findViewById(R.id.search_artist);
         recyclerView = findViewById(R.id.recycler_view_artists);
         artisViewModel = new ViewModelProvider(this).get(SearchArtisViewModel.class);
 
@@ -40,10 +36,7 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
 
         subscribeOberver();
 
-        search.setOnClickListener((v) -> {
-            artistname = et_artist.getText().toString();
-            getArtistsApi(artistname);
-        });
+        initSearchView();
 
 
     }
@@ -56,10 +49,23 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
 
     }
 
+    private void initSearchView() {
+        final SearchView searchView = findViewById(R.id.search_view);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String artistName) {
+                artisViewModel.getArtistsApi(artistName);
+                return false;
+            }
 
-    private void getArtistsApi(String artistName) {
-        artisViewModel.getArtistsApi(artistName);
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
     }
+
 
     private void setupRecyclerView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
