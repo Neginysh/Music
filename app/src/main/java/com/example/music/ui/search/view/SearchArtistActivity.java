@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 
@@ -21,7 +19,6 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
 
     private RecyclerView recyclerView;
     private ArtistsRecyclerAdapter adapter;
-    private ProgressBar progressBar;
     private SearchArtisViewModel artisViewModel;
 
 
@@ -54,6 +51,7 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String artistName) {
+                adapter.displayLoading();
                 artisViewModel.getArtistsApi(artistName);
                 return false;
             }

@@ -17,6 +17,9 @@ import java.util.List;
 
 public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private static final int ARTISTS_TYPE = 1;
+    private static final int LOADING_TYPE = 2;
+
     private List<Artist> artistList;
     private OnArtistListerner onArtistListerner;
 
@@ -27,14 +30,30 @@ public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_list_item, parent, false);
-        return new ArtistsViewHolder(view, onArtistListerner);
+        View view = null;
+        switch (viewType) {
+            case ARTISTS_TYPE: {
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_list_item, parent, false);
+                return new ArtistsViewHolder(view, onArtistListerner);
+            }
+            case LOADING_TYPE: {
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.loding_artists_list_item, parent, false);
+                return new LoadingVewiHolder(view);
+            }
+            default:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_list_item, parent, false);
+                return new ArtistsViewHolder(view, onArtistListerner);
+        }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((ArtistsViewHolder) holder).tv_artist.setText(artistList.get(position).getName());
+        int itemViewType = getItemViewType(position);
+        if (itemViewType == ARTISTS_TYPE) {
+            ((ArtistsViewHolder) holder).tv_artist.setText(artistList.get(position).getName());
+        }
     }
+
 
     @Override
     public int getItemCount() {
@@ -47,4 +66,36 @@ public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         artistList = artists;
         notifyDataSetChanged();
     }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (artistList.get(position).getName().equals("It is loading...")) {
+            return LOADING_TYPE;
+        } else return ARTISTS_TYPE;
+    }
+
+
+    public void displayLoading() {
+        if (!isLoading()){
+            Artist artist = new Artist();
+            artist.setName("It is loading...");
+            List<Artist> loadingList = new ArrayList<>();
+            loadingList.add(artist);
+            artistList = loadingList;
+            notifyDataSetChanged();
+        }
+    }
+
+    private boolean isLoading() {
+        if (artistList!=null){
+            if (artistList.size() > 0) {
+                if (artistList.get(artistList.size() - 1).getName().equals("It is loading..."))
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+
 }
