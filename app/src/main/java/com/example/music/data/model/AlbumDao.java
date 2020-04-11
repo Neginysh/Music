@@ -12,6 +12,8 @@ import com.example.music.data.model.topalbums.Album;
 
 import java.util.List;
 
+import retrofit2.http.GET;
+
 @Dao
 public interface AlbumDao {
 
@@ -27,6 +29,7 @@ public interface AlbumDao {
     @TypeConverters({Converters.class})
     @Query("SELECT * FROM album_table")
     LiveData<List<AlbumModel>> getAlbums(); //livedata to observe changes
+
 
 
 }

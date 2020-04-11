@@ -1,16 +1,12 @@
-package com.example.music.data.api;
-
-import androidx.lifecycle.LiveData;
+package com.example.music.data.requests.api;
 
 import com.example.music.data.model.albumsinfo.Album;
 import com.example.music.data.model.artistsearch.ArtistSearch;
 import com.example.music.data.model.topalbums.ArtistsTopAlbums;
 
 import java.util.List;
-import java.util.Observable;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 

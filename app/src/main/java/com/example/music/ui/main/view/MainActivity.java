@@ -2,6 +2,7 @@ package com.example.music.ui.main.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        viewModel= ViewModelProviders.of(this).get(MainViewModel.class);
+        viewModel= new ViewModelProvider(this).get(MainViewModel.class);
         viewModel.getAllAlbums().observe(this, new Observer<List<AlbumModel>>() {
             @Override
             public void onChanged(List<AlbumModel> albums) {

@@ -15,67 +15,36 @@ import com.example.music.data.model.artistsearch.Artist;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<ArtistsRecyclerAdapter.BaseViewHolder> {
+public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private Context context;
     private List<Artist> artistList;
-    private ItemClickListener mClickListener;
+    private OnArtistListerner onArtistListerner;
 
-    public ArtistsRecyclerAdapter(Context context, List<Artist> artistList) {
-        this.context = context;
-        this.artistList = new ArrayList<>(artistList);
+    public ArtistsRecyclerAdapter(OnArtistListerner onArtistListerner) {
+        this.onArtistListerner = onArtistListerner;
     }
 
     @NonNull
     @Override
-    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view =  LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_list_item, parent, false);
-        BaseViewHolder vh = new BaseViewHolder(view);
-        return vh;
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_list_item, parent, false);
+        return new ArtistsViewHolder(view, onArtistListerner);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
-        String name = artistList.get(position).getName();
-        holder.tv_artist.setText(name);
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        ((ArtistsViewHolder) holder).tv_artist.setText(artistList.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return artistList.size();
+        if (artistList != null)
+            return artistList.size();
+        return 0;
     }
 
-    public Artist getItem(int id) {
-        return artistList.get(id);
-    }
-
-
-
-    public class BaseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-
-        public TextView tv_artist;
-
-        public BaseViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tv_artist=itemView.findViewById(R.id.list_item_artist);
-            tv_artist.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            if (mClickListener != null) mClickListener.onItemClick(v, getAdapterPosition());
-
-        }
-    }
-
-
-    // allows clicks events to be caught
-    public void setClickListener(ItemClickListener itemClickListener) {
-        this.mClickListener = itemClickListener;
-    }
-
-    // parent activity will implement this method to respond to click events
-    public interface ItemClickListener {
-        void onItemClick(View view, int position);
+    public void setArtistList(List<Artist> artists) {
+        artistList = artists;
+        notifyDataSetChanged();
     }
 }

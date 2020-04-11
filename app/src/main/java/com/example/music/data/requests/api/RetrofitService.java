@@ -1,4 +1,4 @@
-package com.example.music.data.api;
+package com.example.music.data.requests.api;
 
 import org.jetbrains.annotations.NotNull;
 
