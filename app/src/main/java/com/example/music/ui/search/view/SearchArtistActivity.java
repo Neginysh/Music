@@ -5,14 +5,16 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ProgressBar;
 import android.widget.SearchView;
 
 import com.example.music.R;
-import com.example.music.ui.search.adapter.ArtistsRecyclerAdapter;
-import com.example.music.ui.search.adapter.OnArtistListerner;
+import com.example.music.ui.adapters.ArtistsRecyclerAdapter;
+import com.example.music.ui.adapters.OnArtistListerner;
+import com.example.music.ui.albums.view.TopAlbumsActivity;
 import com.example.music.ui.search.viewmodel.SearchArtisViewModel;
+import com.example.music.utils.VerticalItemDecorator;
 
 
 public class SearchArtistActivity extends AppCompatActivity implements OnArtistListerner {
@@ -37,6 +39,18 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
 
 
     }
+
+    private void setupRecyclerView() {
+        adapter = new ArtistsRecyclerAdapter(this);
+        VerticalItemDecorator decorator = new VerticalItemDecorator(30);
+        recyclerView.addItemDecoration(decorator);
+
+        recyclerView.setAdapter(adapter);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+    }
+
 
     private void subscribeOberver() {
         artisViewModel.getArtists().observe(SearchArtistActivity.this, (artists) -> {
@@ -65,17 +79,20 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
     }
 
 
-    private void setupRecyclerView() {
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ArtistsRecyclerAdapter(this);
-        recyclerView.setAdapter(adapter);
+    @Override
+    protected void onResume() {
+        super.onResume();
+        subscribeOberver();
     }
 
-
     @Override
-    public void onArtistClick(int position) {
+    public void onArtistClick(String artistName) {
+        adapter.displayLoading();
+        //adapter.displayTopAlbums();
         //To do: show top albums
-
+        Intent i = new Intent(this, TopAlbumsActivity.class);
+        i.putExtra("name", artistName);
+        startActivity(i);
     }
 
     @Override

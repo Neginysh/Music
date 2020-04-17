@@ -4,18 +4,15 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.music.data.model.artistsearch.Artist;
-import com.example.music.data.model.artistsearch.ArtistSearch;
-import com.example.music.data.repository.ArtistsRepository;
+import com.example.music.data.repository.Repository;
 
 import java.util.List;
 
-import retrofit2.Call;
-
 public class SearchArtisViewModel extends ViewModel {
-    private ArtistsRepository repository;
+    private Repository repository;
 
     public SearchArtisViewModel() {
-        repository = ArtistsRepository.getInstance();
+        repository = Repository.getInstance();
     }
 
     public LiveData<List<Artist>> getArtists(){

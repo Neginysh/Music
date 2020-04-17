@@ -4,26 +4,30 @@ package com.example.music.data.repository;
 import androidx.lifecycle.LiveData;
 
 import com.example.music.data.model.artistsearch.Artist;
+import com.example.music.data.model.topalbums.Album;
 import com.example.music.data.requests.ArtistsApiClient;
+import com.example.music.data.requests.TopAlbumsApiClient;
 
 
 import java.util.List;
 
 
-public class ArtistsRepository {
+public class Repository {
 
-    private static ArtistsRepository instance;
+    private static Repository instance;
     private ArtistsApiClient artistsApiClient;
+    private TopAlbumsApiClient topAlbumsApiClient;
 
-    public static ArtistsRepository getInstance() {
+    public static Repository getInstance() {
         if (instance == null) {
-            instance = new ArtistsRepository();
+            instance = new Repository();
         }
         return instance;
     }
 
-    private ArtistsRepository() {
+    private Repository() {
         artistsApiClient = ArtistsApiClient.getInstance();
+        topAlbumsApiClient = TopAlbumsApiClient.getInstance();
     }
 
 
@@ -31,12 +35,19 @@ public class ArtistsRepository {
         return artistsApiClient.getAllArtists();
 
     }
-
-    public void getArtistsApi(String artistName){
+    public void getArtistsApi(String artistName) {
         artistsApiClient.getArtistsApi(artistName);
     }
 
 
+
+    public LiveData<List<Album>> getTopAlbums() {
+        return topAlbumsApiClient.getTopAlbums();
+
+    }
+    public void getTopAlbumsApi(String artistName) {
+        topAlbumsApiClient.getTopAlbumsApi(artistName);
+    }
 
 
 }

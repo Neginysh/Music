@@ -1,4 +1,4 @@
-package com.example.music.ui.search.adapter;
+package com.example.music.ui.adapters;
 
 import android.view.View;
 

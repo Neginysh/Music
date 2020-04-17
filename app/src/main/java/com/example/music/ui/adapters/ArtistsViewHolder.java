@@ -1,4 +1,4 @@
-package com.example.music.ui.search.adapter;
+package com.example.music.ui.adapters;
 
 import android.view.View;
 import android.widget.TextView;
@@ -24,6 +24,6 @@ public class ArtistsViewHolder extends RecyclerView.ViewHolder implements View.O
 
     @Override
     public void onClick(View v) {
-        onArtistListerner.onArtistClick(getAdapterPosition());
+        onArtistListerner.onArtistClick(tv_artist.getText().toString());
     }
 }

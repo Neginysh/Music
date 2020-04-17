@@ -1,68 +1,91 @@
 package com.example.music.ui.albums.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 import com.example.music.R;
-import com.example.music.data.requests.api.LastfmApi;
-import com.example.music.data.requests.api.RetrofitService;
-import com.example.music.data.model.topalbums.Album;
-import com.example.music.data.model.topalbums.ArtistsTopAlbums;
 
-import java.util.ArrayList;
+import com.example.music.data.model.topalbums.Album;
+import com.example.music.ui.adapters.AlbumsRecyclerAdapter;
+import com.example.music.ui.adapters.ArtistsRecyclerAdapter;
+import com.example.music.ui.adapters.OnArtistListerner;
+import com.example.music.ui.albums.viewmodel.TopAlbumsViewModel;
+import com.example.music.utils.VerticalItemDecorator;
+
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-import static com.example.music.data.utils.Constants.API_KEY;
+public class TopAlbumsActivity extends AppCompatActivity implements OnArtistListerner {
 
-public class TopAlbumsActivity extends AppCompatActivity {
-
-
-    LastfmApi api;
-    Button test;
+    private RecyclerView recyclerView;
+    private AlbumsRecyclerAdapter adapter;
+    private TopAlbumsViewModel topAlbumsViewModel;
+    private static final String TAG = "TopAlbumsActivity";
+    private String artistName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_albums);
-
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                testRetrofit();
-            }
-        });
+        recyclerView = findViewById(R.id.recycler_view_albums);
+        topAlbumsViewModel = new ViewModelProvider(this).get(TopAlbumsViewModel.class);
 
 
+
+
+        setupRecyclerView();
+        subscribeOberver();
+        initTopAlbums();
 
 
     }
 
 
-    public void testRetrofit(){
-        api = RetrofitService.create(LastfmApi.class);
-        Call<ArtistsTopAlbums> topAlbumsCall = api.getTopAlbums("cher", API_KEY);
-        topAlbumsCall.enqueue(new Callback<ArtistsTopAlbums>() {
-            @Override
-            public void onResponse(Call<ArtistsTopAlbums> call, Response<ArtistsTopAlbums> response) {
-                Log.d("TopAlbums", "onResponse: " + response.toString());
-                List<Album> albums = new ArrayList<>(response.body().getTopalbums().getAlbum());
-                for (Album album: albums){
-                    Log.d("TopAlbums", "onResponse: " + album.getName());
-                }
-            }
+    private void setupRecyclerView() {
+        VerticalItemDecorator decorator = new VerticalItemDecorator(30);
+        recyclerView.addItemDecoration(decorator);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
-            @Override
-            public void onFailure(Call<ArtistsTopAlbums> call, Throwable t) {
+        adapter = new AlbumsRecyclerAdapter(this);
+        recyclerView.setAdapter(adapter);
+    }
 
+    private void initTopAlbums() {
+        Intent intent = getIntent();
+        artistName = intent.getStringExtra("name");
+        topAlbumsViewModel.getTopAlbumsApi(artistName);
+    }
+
+
+    private void subscribeOberver() {
+        topAlbumsViewModel.getTopAlbums().observe(TopAlbumsActivity.this, (albums) -> {
+            if (albums != null) {
+                Log.d(TAG, "subscribeOberver: " + albums.toString());
+                adapter.setTopAlbumsList(albums);
             }
         });
+
     }
+
+
+    @Override
+    public void onArtistClick(String artistName) {
+        //nothing
+    }
+
+    @Override
+    public void onAlbumClick(int postition) {
+        // 1. on image: make favourite, 2. on layout: expand view with albums.getInfo api
+
+    }
+
+
 }

@@ -29,6 +29,7 @@ dependencies {
     def lifecycle_version = "2.2.0"
     def room_version = "2.2.4"
     def retrofit_version = "2.7.1"
+    def glide_version = "4.11.0"
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -63,6 +64,13 @@ dependencies {
 
     //Designe Support
     implementation 'com.google.android.material:material:1.1.0'
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 
 
 }

@@ -13,7 +13,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.example.music.data.utils.Constants.BASE_URL;
+import static com.example.music.utils.Constants.BASE_URL;
 
 //ref: https://medium.com/@amtechnovation/android-architecture-component-mvvm-part-1-a2e7cff07a76
 public class RetrofitService {

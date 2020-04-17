@@ -1,4 +1,4 @@
-package com.example.music.data.utils;
+package com.example.music.utils;
 
 public class Constants {
 

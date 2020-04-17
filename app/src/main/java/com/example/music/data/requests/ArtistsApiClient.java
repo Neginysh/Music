@@ -5,7 +5,6 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.music.data.AppExecutors;
 import com.example.music.data.model.artistsearch.Artist;
 import com.example.music.data.model.artistsearch.ArtistSearch;
 import com.example.music.data.requests.api.LastfmApi;
@@ -20,8 +19,8 @@ import java.util.concurrent.TimeUnit;
 import retrofit2.Call;
 import retrofit2.Response;
 
-import static com.example.music.data.utils.Constants.API_KEY;
-import static com.example.music.data.utils.Constants.NETWORK_TIMEOUT;
+import static com.example.music.utils.Constants.API_KEY;
+import static com.example.music.utils.Constants.NETWORK_TIMEOUT;
 
 public class ArtistsApiClient {
     private static ArtistsApiClient artistsApiClient;

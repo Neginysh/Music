@@ -19,6 +19,7 @@ public interface LastfmApi {
                                   @Query("api_key") String apiKey);
 
     // ?method=album.getinfo&api_key=YOUR_API_KEY&artist=Cher&album=Believe&format=json
+    //?method=album.getinfo&api_key=7da8db4082844f11d8d41b516c75ffa3&mbid=e4e7db8a-2622-47d3-80a5-91534d523ac5&format=json
     @GET("?method=album.getinfo&format=json")
     Call<List<Album>> getAlbums(@Query("api_key") String apiKey,
                                 @Query("artist") String artistName,
