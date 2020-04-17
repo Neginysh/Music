@@ -50,4 +50,14 @@ public class Repository {
     }
 
 
+    public LiveData<com.example.music.data.model.albumsinfo.Album> getSingleAlbum() {
+        return topAlbumsApiClient.getSingleAlbum();
+
+    }
+    public void getSingleAlbumById(String albumId) {
+        topAlbumsApiClient.getSingleAlbumById(albumId);
+    }
+
+
+
 }

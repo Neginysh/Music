@@ -15,17 +15,17 @@ import java.util.List;
 public class AlbumsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Album> albumsList;
-    private OnArtistListerner onArtistListerner;
+    private OnAlbumListener onAlbumListener;
 
-    public AlbumsRecyclerAdapter(OnArtistListerner onArtistListerner) {
-        this.onArtistListerner = onArtistListerner;
+    public AlbumsRecyclerAdapter(OnAlbumListener onAlbumListener) {
+        this.onAlbumListener = onAlbumListener;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.topalbums_list_item, parent, false);
-        return new TopAlbumsViewHolder(view, onArtistListerner);
+        return new TopAlbumsViewHolder(view, onAlbumListener);
     }
 
     @Override
@@ -44,5 +44,12 @@ public class AlbumsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public void setTopAlbumsList(List<Album> albums) {
         albumsList = albums;
         notifyDataSetChanged();
+    }
+
+    public Album getSelectedAlbum(int position) {
+        if (albumsList.size() > 0) {
+            return albumsList.get(position);
+        }
+        return null;
     }
 }

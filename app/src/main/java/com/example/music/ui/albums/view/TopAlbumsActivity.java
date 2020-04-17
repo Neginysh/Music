@@ -16,6 +16,7 @@ import com.example.music.R;
 import com.example.music.data.model.topalbums.Album;
 import com.example.music.ui.adapters.AlbumsRecyclerAdapter;
 import com.example.music.ui.adapters.ArtistsRecyclerAdapter;
+import com.example.music.ui.adapters.OnAlbumListener;
 import com.example.music.ui.adapters.OnArtistListerner;
 import com.example.music.ui.albums.viewmodel.TopAlbumsViewModel;
 import com.example.music.utils.VerticalItemDecorator;
@@ -23,7 +24,7 @@ import com.example.music.utils.VerticalItemDecorator;
 import java.util.List;
 
 
-public class TopAlbumsActivity extends AppCompatActivity implements OnArtistListerner {
+public class TopAlbumsActivity extends AppCompatActivity implements OnAlbumListener {
 
     private RecyclerView recyclerView;
     private AlbumsRecyclerAdapter adapter;
@@ -37,8 +38,6 @@ public class TopAlbumsActivity extends AppCompatActivity implements OnArtistList
         setContentView(R.layout.activity_top_albums);
         recyclerView = findViewById(R.id.recycler_view_albums);
         topAlbumsViewModel = new ViewModelProvider(this).get(TopAlbumsViewModel.class);
-
-
 
 
         setupRecyclerView();
@@ -58,12 +57,6 @@ public class TopAlbumsActivity extends AppCompatActivity implements OnArtistList
         recyclerView.setAdapter(adapter);
     }
 
-    private void initTopAlbums() {
-        Intent intent = getIntent();
-        artistName = intent.getStringExtra("name");
-        topAlbumsViewModel.getTopAlbumsApi(artistName);
-    }
-
 
     private void subscribeOberver() {
         topAlbumsViewModel.getTopAlbums().observe(TopAlbumsActivity.this, (albums) -> {
@@ -75,15 +68,28 @@ public class TopAlbumsActivity extends AppCompatActivity implements OnArtistList
 
     }
 
-
-    @Override
-    public void onArtistClick(String artistName) {
-        //nothing
+    private void initTopAlbums() {
+        Intent intent = getIntent();
+        artistName = intent.getStringExtra("name");
+        topAlbumsViewModel.getTopAlbumsApi(artistName);
     }
+
 
     @Override
     public void onAlbumClick(int postition) {
         // 1. on image: make favourite, 2. on layout: expand view with albums.getInfo api
+        Album album = adapter.getSelectedAlbum(postition);
+        String albumId = album.getMbid();
+
+        topAlbumsViewModel.getSingleAlbum().observe(TopAlbumsActivity.this, (singleAlbum) -> {
+            if (singleAlbum != null) {
+                Log.d(TAG, "onAlbumClick: " + singleAlbum.getArtist());
+                Log.d(TAG, "onAlbumClick: " + singleAlbum.getTracks());
+                Log.d(TAG, "onAlbumClick: "+ singleAlbum.getName());
+            }
+        });
+
+        topAlbumsViewModel.getSingleAlbumById(albumId);
 
     }
 

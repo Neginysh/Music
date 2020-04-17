@@ -19,10 +19,8 @@ public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<
 
     private static final int ARTISTS_TYPE = 1;
     private static final int LOADING_TYPE = 2;
-    private static final int TOP_ALBUMS_TYPE = 3;
 
     private List<Artist> artistList;
-//    private List<Album> albumsList;
     private OnArtistListerner onArtistListerner;
 
     public ArtistsRecyclerAdapter(OnArtistListerner onArtistListerner) {
@@ -42,10 +40,7 @@ public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.loding_artists_list_item, parent, false);
                 return new LoadingVewiHolder(view);
             }
-//            case TOP_ALBUMS_TYPE: {
-//                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.topalbums_list_item, parent, false);
-//                return new TopAlbumsViewHolder(view, onArtistListerner);
-//            }
+
             default:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_list_item, parent, false);
                 return new ArtistsViewHolder(view, onArtistListerner);
@@ -105,21 +100,5 @@ public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<
         return false;
     }
 
-
-//    public void displayTopAlbums(){
-////        Artist artist = new Artist();
-////        artist.setName("Show Top Albums...");
-////        List<Artist> albumsLoaderList = new ArrayList<>();
-////        albumsLoaderList.add(artist);
-////        artistList = albumsLoaderList;
-////        notifyDataSetChanged();
-//        albumsList=new ArrayList<>();
-//        Album album = new Album();
-//        album.setName("Show Top Albums...");
-//        List<Album> albumsLoaderList = new ArrayList<>();
-//        albumsLoaderList.add(album);
-//        albumsList = albumsLoaderList;
-//        notifyDataSetChanged();
-//    }
 
 }

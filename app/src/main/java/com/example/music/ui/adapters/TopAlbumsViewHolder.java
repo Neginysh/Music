@@ -15,15 +15,15 @@ public class TopAlbumsViewHolder extends RecyclerView.ViewHolder implements View
     public CircleImageView favImage;
     public TextView tracks;
     public CircleImageView albumImg;
-    private OnArtistListerner onArtistListerner;
+    private OnAlbumListener onAlbumListener;
 
-    public TopAlbumsViewHolder(@NonNull View itemView, OnArtistListerner onArtistListerner) {
+    public TopAlbumsViewHolder(@NonNull View itemView, OnAlbumListener onAlbumListener) {
         super(itemView);
         albumsName = itemView.findViewById(R.id.album_name);
         favImage = itemView.findViewById(R.id.fav_image);
         tracks = itemView.findViewById(R.id.tracks);
         albumImg = itemView.findViewById(R.id.album_image);
-        this.onArtistListerner = onArtistListerner;
+        this.onAlbumListener = onAlbumListener;
 
         itemView.setOnClickListener(this);
     }
@@ -31,6 +31,6 @@ public class TopAlbumsViewHolder extends RecyclerView.ViewHolder implements View
 
     @Override
     public void onClick(View v) {
-        onArtistListerner.onAlbumClick(getAdapterPosition());
+        onAlbumListener.onAlbumClick(getAdapterPosition());
     }
 }

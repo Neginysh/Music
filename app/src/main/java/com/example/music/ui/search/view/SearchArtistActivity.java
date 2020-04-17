@@ -95,8 +95,5 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
         startActivity(i);
     }
 
-    @Override
-    public void onAlbumClick(int postition) {
 
-    }
 }

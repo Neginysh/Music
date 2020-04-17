@@ -22,4 +22,13 @@ public class TopAlbumsViewModel extends ViewModel {
     public void getTopAlbumsApi(String artistName){
         repository.getTopAlbumsApi(artistName);
     }
+
+
+    public LiveData<com.example.music.data.model.albumsinfo.Album> getSingleAlbum(){
+        return repository.getSingleAlbum();
+    }
+
+    public void getSingleAlbumById(String albumId){
+        repository.getSingleAlbumById(albumId);
+    }
 }

@@ -6,53 +6,29 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="onalbum" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0feb5e12-9d60-4f46-a20c-f698719e7d12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_11_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_11_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__de_hdodenhof_circleimageview_3_1_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/AppExecutors.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/AppExecutors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/repository/ArtistsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/repository/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/ArtistsApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/ArtistsApiClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/TopAlbumsApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/TopAlbumsApiClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/LastfmApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/LastfmApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/RetrofitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/RetrofitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/data/utils/HorizontalDottedProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/utils/HorizontalDottedProgress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/AlbumsRecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/AlbumsRecyclerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/ArtistsRecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/ArtistsRecyclerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnArtistListerner.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnArtistListerner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/TopAlbumsViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/TopAlbumsViewHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/adapter/ArtistsRecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/ArtistsRecyclerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/adapter/ArtistsViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/ArtistsViewHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/adapter/LoadingVewiHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/LoadingVewiHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/adapter/OnArtistListerner.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnArtistListerner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/viewmodel/TopAlbumsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/viewmodel/TopAlbumsViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/view/SearchArtistActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/view/SearchArtistActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/viewmodel/SearchArtisViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/viewmodel/SearchArtisViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_search_artist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_search_artist.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_top_albums.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_top_albums.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/artist_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/artist_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/loding_artists_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/loding_artists_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/topalbums_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/topalbums_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,34 +52,96 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/view/SearchArtistActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="88" column="21" lean-forward="true" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+            <state relative-caret-position="423">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2489#2490#0" expanded="true" />
-                <element signature="e#2525#2526#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/ArtistsRecyclerAdapter.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+            <state relative-caret-position="281">
+              <caret line="89" column="11" lean-forward="true" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/viewmodel/TopAlbumsViewModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="63" column="17" lean-forward="true" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+            <state relative-caret-position="270">
+              <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#476#477#0" expanded="true" />
+                <element signature="e#524#525#0" expanded="true" />
+                <element signature="e#577#578#0" expanded="true" />
+                <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#797#798#0" expanded="true" />
+                <element signature="e#851#852#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/repository/Repository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+              <folding>
+                <element signature="e#975#976#0" expanded="true" />
+                <element signature="e#1033#1034#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/TopAlbumsApiClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2">
+              <caret line="155" column="19" lean-forward="true" selection-start-line="155" selection-start-column="19" selection-end-line="155" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/LastfmApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="24" column="33" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/AlbumsRecyclerAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnAlbumListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -113,9 +151,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="layoutResourceFile_vertical" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -159,24 +197,25 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/adapter/ArtistsRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/ArtistsViewHolder.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnArtistListerner.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/topalbums_list_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/TopAlbumsViewHolder.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/data/repository/Repository.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/viewmodel/TopAlbumsViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/LastfmApi.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/TopAlbumsApiClient.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/AlbumsRecyclerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/ArtistsRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/utils/ItemDecorator.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_search_artist.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/artist_list_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_top_albums.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/utils/VerticalItemDecorator.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnArtistListerner.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnAlbumListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/view/SearchArtistActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/TopAlbumsViewHolder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/ArtistsRecyclerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/AlbumsRecyclerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/LastfmApi.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/TopAlbumsApiClient.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/data/repository/Repository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/viewmodel/TopAlbumsViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java" />
       </list>
     </option>
   </component>
@@ -221,7 +260,49 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="music" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Music" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="music" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="albumsinfo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Music" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="music" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="requests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Music" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="music" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="requests" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Music" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="music" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Music" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="music" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="adapters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Music" type="1abcf292:AndroidViewProjectNode" />
@@ -355,10 +436,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4964539" visible="true" weight="0.19060403" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4964539" visible="true" weight="0.23557048" />
       <window_info id="Structure" order="2" sideWeight="0.5035461" side_tool="true" weight="0.1932886" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -367,11 +447,11 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.4986577" weight="0.23087819" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.4986577" visible="true" weight="0.37677053" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5013423" side_tool="true" weight="0.34135976" />
-      <window_info active="true" anchor="bottom" id="Build" order="5" sideWeight="0.4986577" visible="true" weight="0.2082153" />
+      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.4986577" weight="0.77195466" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.3512748" />
@@ -388,37 +468,37 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java</url>
-          <line>68</line>
+          <line>61</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/TopAlbumsApiClient.java</url>
-          <line>87</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/view/SearchArtistActivity.java</url>
-          <line>91</line>
+          <line>92</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/view/SearchArtistActivity.java</url>
-          <line>92</line>
+          <line>93</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/view/SearchArtistActivity.java</url>
-          <line>93</line>
+          <line>94</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java</url>
-          <line>43</line>
+          <line>42</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
@@ -430,7 +510,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java</url>
-          <line>71</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
@@ -450,21 +530,8 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnArtistListerner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/model/topalbums/Attr.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -558,13 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/utils/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/RetrofitService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -572,13 +632,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/LastfmApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -679,40 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/repository/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#975#976#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/ArtistsApiClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-689">
-          <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/viewmodel/TopAlbumsViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/android/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -724,16 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="1586" selection-start-line="1586" selection-end-line="1586" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/TopAlbumsApiClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -757,16 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/TopAlbumsViewHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/android/graphics/Rect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -778,16 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/AlbumsRecyclerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -853,32 +842,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/ArtistsApiClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="63" column="17" lean-forward="true" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        <state relative-caret-position="321">
+          <caret line="112" column="18" selection-start-line="112" selection-start-column="18" selection-end-line="112" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnArtistListerner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/search/view/SearchArtistActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="88" column="21" lean-forward="true" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        <state relative-caret-position="423">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2489#2490#0" expanded="true" />
-            <element signature="e#2525#2526#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/TopAlbumsViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/ArtistsRecyclerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+        <state relative-caret-position="-597">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/OnAlbumListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/adapters/AlbumsRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/utils/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="74" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/model/albumsinfo/AlbumInfos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/api/LastfmApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/requests/TopAlbumsApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="155" column="19" lean-forward="true" selection-start-line="155" selection-start-column="19" selection-end-line="155" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/data/repository/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+          <folding>
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/viewmodel/TopAlbumsViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/music/ui/albums/view/TopAlbumsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="89" column="11" lean-forward="true" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

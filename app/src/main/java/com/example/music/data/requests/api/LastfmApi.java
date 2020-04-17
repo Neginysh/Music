@@ -1,6 +1,7 @@
 package com.example.music.data.requests.api;
 
 import com.example.music.data.model.albumsinfo.Album;
+import com.example.music.data.model.albumsinfo.AlbumInfos;
 import com.example.music.data.model.artistsearch.ArtistSearch;
 import com.example.music.data.model.topalbums.ArtistsTopAlbums;
 
@@ -21,9 +22,8 @@ public interface LastfmApi {
     // ?method=album.getinfo&api_key=YOUR_API_KEY&artist=Cher&album=Believe&format=json
     //?method=album.getinfo&api_key=7da8db4082844f11d8d41b516c75ffa3&mbid=e4e7db8a-2622-47d3-80a5-91534d523ac5&format=json
     @GET("?method=album.getinfo&format=json")
-    Call<List<Album>> getAlbums(@Query("api_key") String apiKey,
-                                @Query("artist") String artistName,
-                                @Query("album") String albumName);
+    Call<AlbumInfos> getAlbumInfo(@Query("api_key") String apiKey,
+                               @Query("mbid") String albumId);
 
     //?method=artist.gettopalbums&artist=cher&api_key=YOUR_API_KEY&format=json
     @GET("?method=artist.gettopalbums&format=json")
