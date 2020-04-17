@@ -12,7 +12,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
             android:id="@+id/toolbar"
             app:layout_scrollFlags="scroll|enterAlways">
 
@@ -26,24 +26,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
- <!--   <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <EditText
-            android:id="@+id/et_artist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/search_artist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="@string/search" />
-
-    </RelativeLayout> !-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_artists"
