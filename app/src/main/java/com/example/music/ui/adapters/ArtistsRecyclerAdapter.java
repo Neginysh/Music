@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.music.R;
 import com.example.music.data.model.artistsearch.Artist;
-import com.example.music.data.model.topalbums.Album;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +36,7 @@ public class ArtistsRecyclerAdapter extends RecyclerView.Adapter<
                 return new ArtistsViewHolder(view, onArtistListerner);
             }
             case LOADING_TYPE: {
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.loding_artists_list_item, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.loading_item, parent, false);
                 return new LoadingVewiHolder(view);
             }
 

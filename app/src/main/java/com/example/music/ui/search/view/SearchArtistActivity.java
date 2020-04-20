@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.SearchView;
@@ -65,7 +64,7 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String artistName) {
-                adapter.displayLoading();
+             //   adapter.displayLoading();
                 artisViewModel.getArtistsApi(artistName);
                 return false;
             }

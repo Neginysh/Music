@@ -10,18 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.music.R;
 
 import com.example.music.data.model.topalbums.Album;
 import com.example.music.ui.adapters.AlbumsRecyclerAdapter;
-import com.example.music.ui.adapters.ArtistsRecyclerAdapter;
 import com.example.music.ui.adapters.OnAlbumListener;
-import com.example.music.ui.adapters.OnArtistListerner;
 import com.example.music.ui.albums.viewmodel.TopAlbumsViewModel;
 import com.example.music.utils.VerticalItemDecorator;
-
-import java.util.List;
 
 
 public class TopAlbumsActivity extends AppCompatActivity implements OnAlbumListener {
@@ -53,7 +51,7 @@ public class TopAlbumsActivity extends AppCompatActivity implements OnAlbumListe
         recyclerView.addItemDecoration(decorator);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
-        adapter = new AlbumsRecyclerAdapter(this);
+        adapter = new AlbumsRecyclerAdapter(this, this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -77,21 +75,31 @@ public class TopAlbumsActivity extends AppCompatActivity implements OnAlbumListe
 
     @Override
     public void onAlbumClick(int postition) {
-        // 1. on image: make favourite, 2. on layout: expand view with albums.getInfo api
+
+
         Album album = adapter.getSelectedAlbum(postition);
         String albumId = album.getMbid();
+        adapter.displayLoading();
+
+        subscribeAlbumInfoObserver();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter.displayAlbumInfo();
+        topAlbumsViewModel.getSingleAlbumById(albumId);
+
+    }
+
+    private void subscribeAlbumInfoObserver() {
 
         topAlbumsViewModel.getSingleAlbum().observe(TopAlbumsActivity.this, (singleAlbum) -> {
             if (singleAlbum != null) {
                 Log.d(TAG, "onAlbumClick: " + singleAlbum.getArtist());
-                Log.d(TAG, "onAlbumClick: " + singleAlbum.getTracks());
-                Log.d(TAG, "onAlbumClick: "+ singleAlbum.getName());
+                Log.d(TAG, "onAlbumClick: " + singleAlbum.getName());
+                adapter.setAlbumInfo(singleAlbum);
+
             }
         });
-
-        topAlbumsViewModel.getSingleAlbumById(albumId);
-
     }
+
 
 
 }
