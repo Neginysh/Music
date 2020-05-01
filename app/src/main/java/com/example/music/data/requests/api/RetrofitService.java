@@ -1,5 +1,7 @@
 package com.example.music.data.requests.api;
 
+import com.example.music.utils.LiveDataCallAdapterFactory;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -18,43 +20,36 @@ import static com.example.music.utils.Constants.BASE_URL;
 //ref: https://medium.com/@amtechnovation/android-architecture-component-mvvm-part-1-a2e7cff07a76
 public class RetrofitService {
 
-    private static OkHttpClient getClient() {
-        OkHttpClient.Builder httpClient = new OkHttpClient().newBuilder()
-                .connectTimeout(60, TimeUnit.SECONDS)
-                .readTimeout(60, TimeUnit.SECONDS)
-                .writeTimeout(60, TimeUnit.SECONDS);
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-        httpClient.addInterceptor(interceptor);
+    private static OkHttpClient client = new OkHttpClient.Builder()
 
-        httpClient.addInterceptor(new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-                Request original = chain.request();
-                Request.Builder requestBuilder = original.newBuilder()
-                        .addHeader("Accept", "application/json")
-                        .addHeader("Content-Type", "application/json");
+            // establish connection to server
+            .connectTimeout(60, TimeUnit.SECONDS)
 
+            // time between each byte read from the server
+            .readTimeout(60, TimeUnit.SECONDS)
 
-                Request request = requestBuilder.build();
-                return chain.proceed(request);
-            }
-        });
+            // time between each byte sent to server
+            .writeTimeout(60, TimeUnit.SECONDS)
 
-        return httpClient.build();
-    }
+            .retryOnConnectionFailure(false)
 
-    private static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(getClient())
             .build();
 
 
-    @NotNull
-    public static <S> S create(Class<S> serviceClass) {
-        return retrofit.create(serviceClass);
+    private static Retrofit retrofit =
+            new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .client(client)
+                    .addCallAdapterFactory(new LiveDataCallAdapterFactory())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+
+    private static LastfmApi lastfmApi = retrofit.create(LastfmApi.class);
+
+    public static LastfmApi getApi(){
+        return lastfmApi;
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.music.data.model;
+package com.example.music.data.persistence;
 
 import androidx.room.TypeConverter;
 

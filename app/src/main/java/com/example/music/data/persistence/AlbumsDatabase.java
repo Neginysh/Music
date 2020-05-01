@@ -1,27 +1,24 @@
-package com.example.music.data.model;
+package com.example.music.data.persistence;
 
 import android.content.Context;
-import android.os.AsyncTask;
 
-import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
-import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.example.music.data.model.AlbumModel;
 
 
 @Database(entities = {AlbumModel.class}, version = 1)
 @TypeConverters({Converters.class})
 public abstract class AlbumsDatabase extends RoomDatabase {
 
-    public static final String DB_NAME = "album_database";
-    private static AlbumsDatabase instance;
+    public abstract AlbumDao getAlbumDao();
 
-    public abstract AlbumDao albumDao();
+    public static final String DB_NAME = "album_database";
+
+    private static AlbumsDatabase instance;
 
     public static AlbumsDatabase getInstance(final Context context) {
         if (instance == null) {
@@ -29,8 +26,8 @@ public abstract class AlbumsDatabase extends RoomDatabase {
                     context.getApplicationContext(),
                     AlbumsDatabase.class,
                     DB_NAME)
-                  //  .fallbackToDestructiveMigration()
-                  //  .addCallback(callback)
+                    //  .fallbackToDestructiveMigration()
+                    //  .addCallback(callback)
                     .build();
         }
         return instance;
