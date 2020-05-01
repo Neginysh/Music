@@ -18,22 +18,30 @@ import java.util.Arrays;
 @TypeConverters({Converters.class})
 public abstract class AlbumsDatabase extends RoomDatabase {
 
+    public static final String DB_NAME = "album_database";
     private static AlbumsDatabase instance;
 
     public abstract AlbumDao albumDao();
 
-    public static synchronized AlbumsDatabase getInstance(Context context) {
+    public static AlbumsDatabase getInstance(final Context context) {
         if (instance == null) {
-            instance = Room.databaseBuilder(context.getApplicationContext(),
-                    AlbumsDatabase.class, "album_database")
-                    .fallbackToDestructiveMigration()
-                    .addCallback(callback)
+            instance = Room.databaseBuilder(
+                    context.getApplicationContext(),
+                    AlbumsDatabase.class,
+                    DB_NAME)
+                  //  .fallbackToDestructiveMigration()
+                  //  .addCallback(callback)
                     .build();
         }
         return instance;
     }
 
-    private static RoomDatabase.Callback callback = new RoomDatabase.Callback() {
+
+
+
+
+
+  /*  private static RoomDatabase.Callback callback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
@@ -51,15 +59,12 @@ public abstract class AlbumsDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(Void... voids) {
             albumDao.insert(new AlbumModel("album1", "artist1", "image",
-                    new ArrayList<String>(Arrays.asList("track1", "track2","track3"))));
+                    new ArrayList<String>(Arrays.asList("track1", "track2", "track3"))));
             albumDao.insert(new AlbumModel("album2", "artist2", "image",
-                    new ArrayList<String>(Arrays.asList("track1", "track2","track3"))));
+                    new ArrayList<String>(Arrays.asList("track1", "track2", "track3"))));
             return null;
         }
-    }
-
-
-
+    }*/
 
 
 }
