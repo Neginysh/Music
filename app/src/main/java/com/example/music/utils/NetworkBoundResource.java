@@ -83,7 +83,7 @@ public abstract class NetworkBoundResource<CacheObject, RequestObject> {
         results.addSource(apiResponse, new Observer<ApiResponse<RequestObject>>() {
             @Override
             public void onChanged(@Nullable final ApiResponse<RequestObject> requestObjectApiResponse) {
-                results.removeSource(dbSource);
+                results.removeSource(dbSource); // if we don't remove the source it will continue listening
                 results.removeSource(apiResponse);
 
                 /*
@@ -174,7 +174,7 @@ public abstract class NetworkBoundResource<CacheObject, RequestObject> {
 
     // Called to create the API call.
     @NonNull @MainThread
-    protected abstract LiveData<ApiResponse<RequestObject>> createCall();
+    protected abstract LiveData<ApiResponse<RequestObject>> createCall(); // we get LiveData (not Call object) from the server, so no runnable and background thread is needed
 
     // Returns a LiveData object that represents the resource that's implemented
     // in the base class.
