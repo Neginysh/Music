@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.SearchView;
 
 import com.example.music.R;
+import com.example.music.data.model.artistsearch.Artist;
 import com.example.music.ui.adapters.ArtistsRecyclerAdapter;
 import com.example.music.ui.adapters.OnArtistListerner;
 import com.example.music.ui.albums.view.TopAlbumsActivity;
@@ -18,6 +21,7 @@ import com.example.music.utils.VerticalItemDecorator;
 
 public class SearchArtistActivity extends AppCompatActivity implements OnArtistListerner {
 
+    private static final String TAG = "SearchArtistActivity";
     private RecyclerView recyclerView;
     private ArtistsRecyclerAdapter adapter;
     private SearchArtisViewModel artisViewModel;
@@ -53,10 +57,23 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
 
     private void subscribeOberver() {
         artisViewModel.getArtists().observe(SearchArtistActivity.this, (artists) -> {
-            if (artists != null)
-                adapter.setArtistList(artists);
+            if (artists != null) {
+                Log.d(TAG, "subscribeOberver: status: " + artists.status);
+                if (artists.data != null) {
+                    for (Artist artist : artists.data)
+                        Log.d(TAG, "subscribeOberver: data: " + artist.getName());
+
+                    adapter.setArtistList(artists.data);
+                }
+
+            }
+
         });
 
+    }
+
+    private void getArtistsApi(String artistName) {
+        artisViewModel.getArtistsApi(artistName);
     }
 
     private void initSearchView() {
@@ -64,8 +81,9 @@ public class SearchArtistActivity extends AppCompatActivity implements OnArtistL
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String artistName) {
-             //   adapter.displayLoading();
-                artisViewModel.getArtistsApi(artistName);
+                //   adapter.displayLoading();
+                // artisViewModel.getArtistsApi(artistName);
+                getArtistsApi(artistName);
                 return false;
             }
 

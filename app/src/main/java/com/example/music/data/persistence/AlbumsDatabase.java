@@ -7,10 +7,11 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import com.example.music.data.model.AlbumModel;
+import com.example.music.data.model.albumsinfo.Album;
+import com.example.music.data.model.artistsearch.Artist;
 
 
-@Database(entities = {AlbumModel.class}, version = 1)
+@Database(entities = {Album.class, com.example.music.data.model.topalbums.Album.class, Artist.class}, version = 1)
 @TypeConverters({Converters.class})
 public abstract class AlbumsDatabase extends RoomDatabase {
 

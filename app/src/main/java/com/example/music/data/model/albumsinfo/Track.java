@@ -1,26 +1,33 @@
 
 package com.example.music.data.model.albumsinfo;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
+import androidx.room.Ignore;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Track {
 
+    @ColumnInfo(name = "trackName")
     @SerializedName("name")
     @Expose
     private String name;
+
+    @Ignore
     @SerializedName("url")
     @Expose
     private String url;
+    @Ignore
     @SerializedName("duration")
     @Expose
     private String duration;
-    @SerializedName("@attr")
-    @Expose
-    private Attr attr;
+    @Ignore
     @SerializedName("streamable")
     @Expose
     private Streamable streamable;
+    @Ignore
     @SerializedName("artist")
     @Expose
     private Artist artist;
@@ -47,14 +54,6 @@ public class Track {
 
     public void setDuration(String duration) {
         this.duration = duration;
-    }
-
-    public Attr getAttr() {
-        return attr;
-    }
-
-    public void setAttr(Attr attr) {
-        this.attr = attr;
     }
 
     public Streamable getStreamable() {

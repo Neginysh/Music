@@ -1,61 +1,69 @@
 
 package com.example.music.data.model.topalbums;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import java.util.List;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+@Entity(tableName = "top_album_table")
 public class Album {
 
-    @SerializedName("name")
-    @Expose
-    private String name;
-    @SerializedName("playcount")
-    @Expose
-    private Integer playcount;
+    @PrimaryKey
+    @NonNull
     @SerializedName("mbid")
     @Expose
-    private String mbid;
-    @SerializedName("url")
+    private String topAlbumId;
+
+    @ColumnInfo(name = "topAlbumName")
+    @SerializedName("name")
     @Expose
-    private String url;
+    private String topAlbumName;
+
+
     @SerializedName("artist")
     @Expose
+    @Embedded
     private Artist artist;
-    @SerializedName("image")
-    @Expose
-    private List<Image> image = null;
 
-    public String getName() {
-        return name;
+    @ColumnInfo(name = "favorite")
+    private boolean favorite;
+
+    @ColumnInfo(name = "timestamp")
+    private int timestamp;
+
+    public Album() {
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Album(String topAlbumId, String topAlbumName, Artist artist, boolean favorite, int timestamp) {
+        this.topAlbumId = topAlbumId;
+        this.topAlbumName = topAlbumName;
+        this.artist = artist;
+        this.favorite = favorite;
+        this.timestamp = timestamp;
     }
 
-    public Integer getPlaycount() {
-        return playcount;
+    public String getTopAlbumId() {
+        return topAlbumId;
     }
 
-    public void setPlaycount(Integer playcount) {
-        this.playcount = playcount;
+    public void setTopAlbumId(String topAlbumId) {
+        this.topAlbumId = topAlbumId;
     }
 
-    public String getMbid() {
-        return mbid;
+    public String getTopAlbumName() {
+        return topAlbumName;
     }
 
-    public void setMbid(String mbid) {
-        this.mbid = mbid;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
+    public void setTopAlbumName(String topAlbumName) {
+        this.topAlbumName = topAlbumName;
     }
 
     public Artist getArtist() {
@@ -66,12 +74,19 @@ public class Album {
         this.artist = artist;
     }
 
-    public List<Image> getImage() {
-        return image;
+    public boolean isFavorite() {
+        return favorite;
     }
 
-    public void setImage(List<Image> image) {
-        this.image = image;
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
     }
 
+    public int getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(int timestamp) {
+        this.timestamp = timestamp;
+    }
 }

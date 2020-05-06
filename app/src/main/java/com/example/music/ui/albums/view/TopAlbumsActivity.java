@@ -24,6 +24,7 @@ import com.example.music.utils.VerticalItemDecorator;
 
 public class TopAlbumsActivity extends AppCompatActivity implements OnAlbumListener {
 
+
     private RecyclerView recyclerView;
     private AlbumsRecyclerAdapter adapter;
     private TopAlbumsViewModel topAlbumsViewModel;
@@ -59,8 +60,15 @@ public class TopAlbumsActivity extends AppCompatActivity implements OnAlbumListe
     private void subscribeOberver() {
         topAlbumsViewModel.getTopAlbums().observe(TopAlbumsActivity.this, (albums) -> {
             if (albums != null) {
-                Log.d(TAG, "subscribeOberver: " + albums.toString());
-                adapter.setTopAlbumsList(albums);
+
+                Log.d(TAG, "subscribeOberver status: " + albums.status.toString());
+                if (albums.data != null) {
+                    for (Album album : albums.data)
+                        Log.d(TAG, "subscribeOberver: data: " + album.getTopAlbumName());
+
+                    adapter.setTopAlbumsList(albums.data);
+                }
+
             }
         });
 
@@ -78,28 +86,30 @@ public class TopAlbumsActivity extends AppCompatActivity implements OnAlbumListe
 
 
         Album album = adapter.getSelectedAlbum(postition);
-        String albumId = album.getMbid();
+        String albumId = album.getTopAlbumId();
         adapter.displayLoading();
 
         subscribeAlbumInfoObserver();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter.displayAlbumInfo();
-        topAlbumsViewModel.getSingleAlbumById(albumId);
+        topAlbumsViewModel.getAlbumInfoApi(albumId);
 
     }
 
     private void subscribeAlbumInfoObserver() {
 
-        topAlbumsViewModel.getSingleAlbum().observe(TopAlbumsActivity.this, (singleAlbum) -> {
+        topAlbumsViewModel.getAlbumInfo().observe(TopAlbumsActivity.this, (singleAlbum) -> {
             if (singleAlbum != null) {
-                Log.d(TAG, "onAlbumClick: " + singleAlbum.getArtist());
-                Log.d(TAG, "onAlbumClick: " + singleAlbum.getName());
-                adapter.setAlbumInfo(singleAlbum);
+                Log.d(TAG, "onAlbumClick: " + singleAlbum.status);
+                if (singleAlbum.data != null) {
+                    Log.d(TAG, "subscribeOberver: data: " + singleAlbum.data.getAlbumName());
+
+                    adapter.setAlbumInfo(singleAlbum.data);
+                }
 
             }
         });
     }
-
 
 
 }

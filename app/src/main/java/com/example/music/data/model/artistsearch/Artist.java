@@ -1,30 +1,47 @@
 
 package com.example.music.data.model.artistsearch;
 
-import java.util.List;
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+@Entity(tableName = "artist_table")
 public class Artist {
 
+    @SerializedName("artistId")
+    @Expose
+    private String artistId;
+
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "artistName")
     @SerializedName("name")
     @Expose
     private String name;
-    @SerializedName("listeners")
-    @Expose
-    private String listeners;
-    @SerializedName("mbid")
-    @Expose
-    private String mbid;
-    @SerializedName("url")
-    @Expose
-    private String url;
-    @SerializedName("streamable")
-    @Expose
-    private String streamable;
-    @SerializedName("image")
-    @Expose
-    private List<Image> image = null;
+
+    @ColumnInfo(name = "timestamp")
+    private int timestamp;
+
+    public Artist(String mbid, String name, int timestamp) {
+        this.artistId = mbid;
+        this.name = name;
+        this.timestamp = timestamp;
+    }
+
+    public Artist() {
+    }
+
+    public int getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(int timestamp) {
+        this.timestamp = timestamp;
+    }
 
     public String getName() {
         return name;
@@ -34,44 +51,14 @@ public class Artist {
         this.name = name;
     }
 
-    public String getListeners() {
-        return listeners;
+    public String getArtistId() {
+        return artistId;
     }
 
-    public void setListeners(String listeners) {
-        this.listeners = listeners;
+    public void setArtistId(String artistId) {
+        this.artistId = artistId;
     }
 
-    public String getMbid() {
-        return mbid;
-    }
 
-    public void setMbid(String mbid) {
-        this.mbid = mbid;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getStreamable() {
-        return streamable;
-    }
-
-    public void setStreamable(String streamable) {
-        this.streamable = streamable;
-    }
-
-    public List<Image> getImage() {
-        return image;
-    }
-
-    public void setImage(List<Image> image) {
-        this.image = image;
-    }
 
 }

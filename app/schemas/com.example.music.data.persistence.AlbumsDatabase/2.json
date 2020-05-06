@@ -1,0 +1,146 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "ab91da486ba705b87275732f5baceab9",
+    "entities": [
+      {
+        "tableName": "album_info_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`albumId` TEXT NOT NULL, `albumName` TEXT, `abumArtist` TEXT, `image` TEXT, `timestamp` INTEGER NOT NULL, `trackNames` TEXT, `releasedDate` TEXT, PRIMARY KEY(`albumId`))",
+        "fields": [
+          {
+            "fieldPath": "albumId",
+            "columnName": "albumId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "albumName",
+            "columnName": "albumName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "albumArtist",
+            "columnName": "abumArtist",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tracks.track",
+            "columnName": "trackNames",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "wiki.releasedDate",
+            "columnName": "releasedDate",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "albumId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "top_album_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`topAlbumId` TEXT NOT NULL, `topAlbumName` TEXT, `favorite` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `artistName` TEXT, PRIMARY KEY(`topAlbumId`))",
+        "fields": [
+          {
+            "fieldPath": "topAlbumId",
+            "columnName": "topAlbumId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "topAlbumName",
+            "columnName": "topAlbumName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "favorite",
+            "columnName": "favorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "artist.artistName",
+            "columnName": "artistName",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "topAlbumId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "artist_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`artistId` TEXT, `artistName` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`artistName`))",
+        "fields": [
+          {
+            "fieldPath": "artistId",
+            "columnName": "artistId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "artistName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "artistName"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ab91da486ba705b87275732f5baceab9')"
+    ]
+  }
+}

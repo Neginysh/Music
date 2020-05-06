@@ -67,12 +67,12 @@ public class AlbumsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         int itemViewType = getItemViewType(position);
 
         if (itemViewType == TOP_ALBUMS_TYPE) {
-            ((TopAlbumsViewHolder) holder).albumsName.setText(albumsList.get(position).getName());
+            ((TopAlbumsViewHolder) holder).albumsName.setText(albumsList.get(position).getTopAlbumName());
         } else if (itemViewType == ALBUM_INFO_TYPE) {
             if (albumInfo != null) {
-                ((AlbumInfoViewHolder) holder).albumTitle.setText(albumInfo.getName());
-                ((AlbumInfoViewHolder) holder).albumArtist.setText(albumInfo.getArtist());
-                ((AlbumInfoViewHolder) holder).albumReleasedDate.setText(albumInfo.getWiki().getPublished());
+                ((AlbumInfoViewHolder) holder).albumTitle.setText(albumInfo.getAlbumName());
+                ((AlbumInfoViewHolder) holder).albumArtist.setText(albumInfo.getAlbumArtist());
+                ((AlbumInfoViewHolder) holder).albumReleasedDate.setText(albumInfo.getWiki().getReleasedDate());
 
 
                 StringBuilder builder = new StringBuilder();
@@ -114,7 +114,7 @@ public class AlbumsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     public void displayAlbumInfo() {
         Album album = new Album();
-        album.setName("Show album info...");
+        album.setTopAlbumName("Show album info...");
         List<Album> loadingList = new ArrayList<>();
         loadingList.add(album);
         albumsList = loadingList;
@@ -126,9 +126,9 @@ public class AlbumsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemViewType(int position) {
-        if (albumsList.get(position).getName().equals("It is loading...")) {
+        if (albumsList.get(position).getTopAlbumName().equals("It is loading...")) {
             return LOADING_TYPE;
-        } else if (albumsList.get(position).getName().equals("Show album info...")) {
+        } else if (albumsList.get(position).getTopAlbumName().equals("Show album info...")) {
             return ALBUM_INFO_TYPE;
         } else return TOP_ALBUMS_TYPE;
     }
@@ -136,7 +136,7 @@ public class AlbumsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public void displayLoading() {
         if (!isLoading()) {
             Album album = new Album();
-            album.setName("It is loading...");
+            album.setTopAlbumName("It is loading...");
             List<Album> loadingList = new ArrayList<>();
             loadingList.add(album);
             albumsList = loadingList;
@@ -147,7 +147,7 @@ public class AlbumsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     private boolean isLoading() {
         if (albumsList != null) {
             if (albumsList.size() > 0) {
-                if (albumsList.get(albumsList.size() - 1).getName().equals("It is loading..."))
+                if (albumsList.get(albumsList.size() - 1).getTopAlbumName().equals("It is loading..."))
                     return true;
             }
         }

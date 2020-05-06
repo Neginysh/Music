@@ -1,27 +1,34 @@
 
 package com.example.music.data.model.albumsinfo;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Ignore;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Wiki {
 
+    @ColumnInfo(name = "releasedDate")
     @SerializedName("published")
     @Expose
-    private String published;
+    private String releasedDate;
+
+    @Ignore
     @SerializedName("summary")
     @Expose
     private String summary;
+    @Ignore
     @SerializedName("content")
     @Expose
     private String content;
 
-    public String getPublished() {
-        return published;
+    public String getReleasedDate() {
+        return releasedDate;
     }
 
-    public void setPublished(String published) {
-        this.published = published;
+    public void setReleasedDate(String published) {
+        this.releasedDate = published;
     }
 
     public String getSummary() {
@@ -39,5 +46,6 @@ public class Wiki {
     public void setContent(String content) {
         this.content = content;
     }
+
 
 }
